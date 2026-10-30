@@ -1,1 +1,9 @@
-/* Sections of the Kontakt page (/kontakt/). Filled by that page's ticket, built from css/tokens.css. */
+/* Sections of the Kontakt page (/kontakt/), built from css/tokens.css and the kit's contact
+   and form classes in css/components.css. */
+
+/* the contact band starts closer to the header (design/mockups/kontakt.html:41) */
+.contact-band { padding-top: var(--s-5); }
+
+/* the success panel takes focus after sending; its outline follows the kit's focus ring */
+.form-success:focus { outline: none; }
+.form-success:focus-visible { outline: 2px solid var(--ink-on-light); outline-offset: 4px; }
