@@ -44,6 +44,64 @@
   </header>
 
   <main id="main">
+    <section class="band contact-band">
+      <div class="wrap grid contact-grid">
+        <div class="contact-info">
+          <h1 class="t-display">Kontakt</h1>
+          <h2>So erreichst du uns!</h2>
+          <dl>
+            <div class="detail"><dt>Adresse</dt><dd><address>Marktplatz 14<br>4310 Mauthausen<br>ÖSTERREICH</address></dd></div>
+            <div class="detail"><dt>Email</dt><dd><a href="mailto:office@equicrew.com">office@equicrew.com</a></dd></div>
+            <div class="detail"><dt>Telefonnummer</dt><dd><a class="num" href="tel:+436504593129">+43 650 4593 129</a></dd></div>
+          </dl>
+        </div>
+
+        <div class="sheet contact-form">
+          <form data-contact-form novalidate action="#" method="post" aria-label="Kontaktformular">
+            <div class="form-grid">
+              <div class="field field--half">
+                <label for="f-first_name">Vorname</label>
+                <input class="input" id="f-first_name" name="first_name" type="text" autocomplete="given-name" aria-required="true" aria-describedby="first_name-error">
+                <p class="field-error" id="first_name-error" aria-live="polite"></p>
+              </div>
+              <div class="field field--half">
+                <label for="f-last_name">Nachname</label>
+                <input class="input" id="f-last_name" name="last_name" type="text" autocomplete="family-name" aria-required="true" aria-describedby="last_name-error">
+                <p class="field-error" id="last_name-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input class="input" id="f-email" name="email" type="email" autocomplete="email" aria-required="true" aria-describedby="email-error">
+                <p class="field-error" id="email-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-message">Nachricht</label>
+                <textarea class="input" id="f-message" name="message" rows="6" aria-required="true" aria-describedby="message-error"></textarea>
+                <p class="field-error" id="message-error" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="form-actions">
+              <button class="btn-primary" type="submit" data-submit>
+                <span data-submit-label>Senden</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" data-submit-icon aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"/></svg>
+              </button>
+              <p class="form-note">Alle Felder sind Pflichtfelder. Deine Angaben werden zur Beantwortung deiner Anfrage per E-Mail an EquiCrew übermittelt – mehr dazu in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
+            </div>
+          </form>
+          <div class="form-alert" role="alert" data-form-alert hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></g></svg>
+            <p data-alert-body></p>
+          </div>
+          <div class="form-success" data-form-success role="status" tabindex="-1" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg>
+            <h2>Danke für deine Nachricht!</h2>
+            <p>Wir melden uns so bald wie möglich bei dir.</p>
+            <a class="btn-secondary" href="/">Zur Startseite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
