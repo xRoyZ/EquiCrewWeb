@@ -1,1 +1,47 @@
-/* Sections of the EquiCube page (/equicube/). Filled by that page's ticket, built from css/tokens.css. */
+/* Sections of the EquiCube page (/equicube/). Filled by that page's ticket, built from css/tokens.css.
+   Source: design/mockups/styles.css:439-471 and the inline band paddings of design/mockups/equicube.html:41,56. */
+
+/* showcase: title, freed rendering, product text and the call to action */
+.showcase { padding-top: var(--s-5); }
+.showcase__head { max-width: 44rem; }
+.showcase__fig { width: min(100%, 36rem); margin: var(--s-4) auto 0; }
+.showcase__fig img { height: auto; }
+.showcase__body { margin-top: var(--s-5); align-items: start; }
+.showcase__body > div { grid-column: 4 / 10; }
+.showcase__body .btn-primary { margin-top: var(--s-4); }
+
+/* features: 2x2 stagger of 7/5 and 5/7 tiles, one inverted */
+.features { padding-block: var(--s-6); }
+.tiles { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gap); }
+.tile {
+  grid-column: span 6; min-height: 16rem; padding: var(--s-5) var(--s-4);
+  background: var(--surface); border-radius: var(--r-l);
+  display: flex; flex-direction: column; justify-content: flex-end; gap: var(--s-1);
+}
+.tile--7 { grid-column: span 7; }
+.tile--5 { grid-column: span 5; }
+.tile p { color: var(--muted); }
+.tile--invert { background: var(--light); color: var(--ink-on-light); --ring: var(--ink-on-light); }
+.tile--invert p, .tile--invert .caps { color: var(--muted-on-light); }
+.tile--invert .figure { font-size: var(--fs-6); margin-block: var(--s-1); }
+
+/* advantages */
+.adv__head { max-width: 40rem; }
+.adv__head p { margin-top: var(--s-2); font-size: var(--fs-3); color: var(--fg-muted); }
+.adv__list {
+  margin-top: var(--s-6); padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--gap);
+}
+.adv__item {
+  display: grid; grid-template-columns: 3rem minmax(0, 1fr); align-items: baseline; column-gap: var(--s-1);
+  padding-block: var(--s-3); border-top: 1px solid var(--line);
+}
+.adv__no { font-size: var(--fs-1); font-weight: var(--fw-bold); letter-spacing: 0.16em; color: var(--fg-muted); }
+.adv__text { font-family: var(--font-display); font-size: var(--fs-4); font-weight: var(--fw-light); letter-spacing: -0.01em; line-height: 1.2; hyphens: auto; }
+.adv__text .figure { display: block; font-size: var(--fs-6); margin-top: var(--s-1); }
+
+@media (max-width: 820px) {
+  .showcase__body > div { grid-column: 1 / -1; }
+  .tile, .tile--7, .tile--5 { grid-column: 1 / -1; min-height: 11rem; padding: var(--s-4) var(--s-3); }
+  .adv__list { grid-template-columns: 1fr; }
+}
