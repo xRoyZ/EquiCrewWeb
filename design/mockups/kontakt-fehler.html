@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="screen-route" content="/kontakt/">
+  <meta name="screen-state" content="server unavailable hint">
+  <meta name="theme-color" content="#171e2b">
+  <title>Kontaktformular nicht erreichbar – Kontakt | EquiCrew</title>
+  <meta name="description" content="Das Kontaktformular ist gerade nicht erreichbar: Schreib der EquiCrew direkt an office@equicrew.com.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- serves: AC-01, AC-05, AC-06, AC-07, AC-08, AC-09, AC-10, AC-12, AC-13, AC-14, AC-23 -->
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site-header" data-od-id="site-header">
+    <div class="wrap site-header__bar">
+      <a class="wordmark" href="index.html">equicrew</a>
+      <button class="menu-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon-open" data-icon="lucide/menu" aria-hidden="true"
+          ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"
+        /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon-close" data-icon="lucide/x" aria-hidden="true"
+          ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"
+        /></svg>
+        <span>Menü</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="equicube.html">EquiCube</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="band" data-od-id="contact" style="padding-top: var(--s-5)">
+      <div class="wrap grid contact-grid">
+        <div class="contact-info" data-od-id="contact-details">
+          <h1 class="t-display">Kontakt</h1>
+          <h2>So erreichst du uns!</h2>
+          <dl>
+            <div class="detail"><dt>Adresse</dt><dd><address>Marktplatz 14<br>4310 Mauthausen<br>ÖSTERREICH</address></dd></div>
+            <div class="detail"><dt>Email</dt><dd><a href="mailto:office@equicrew.com">office@equicrew.com</a></dd></div>
+            <div class="detail"><dt>Telefonnummer</dt><dd><a class="num" href="tel:+436504593129">+43 650 4593 129</a></dd></div>
+          </dl>
+        </div>
+
+        <div class="sheet contact-form" data-od-id="contact-form">
+          <form data-contact-form novalidate action="#" method="post" aria-label="Kontaktformular">
+            <div class="form-grid">
+            <div class="field field--half">
+              <label for="f-first_name">Vorname</label>
+              <input class="input" id="f-first_name" name="first_name" type="text" autocomplete="given-name" aria-required="true" aria-describedby="first_name-error" value="Anna">
+              <p class="field-error" id="first_name-error" aria-live="polite"></p>
+            </div>
+            <div class="field field--half">
+              <label for="f-last_name">Nachname</label>
+              <input class="input" id="f-last_name" name="last_name" type="text" autocomplete="family-name" aria-required="true" aria-describedby="last_name-error" value="Muster">
+              <p class="field-error" id="last_name-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input class="input" id="f-email" name="email" type="email" autocomplete="email" aria-required="true" aria-describedby="email-error" value="anna.muster@example.at">
+              <p class="field-error" id="email-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-message">Nachricht</label>
+              <textarea class="input" id="f-message" name="message" rows="6" aria-required="true" aria-describedby="message-error">Wir möchten unser Einfamilienhaus mit einem EquiCube beheizen. Könnt ihr uns bitte zurückrufen?</textarea>
+              <p class="field-error" id="message-error" aria-live="polite"></p>
+            </div>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="form-actions">
+              <button class="btn-primary" type="submit" data-submit>
+                <span data-submit-label>Senden</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" data-submit-icon data-icon="lucide/send" aria-hidden="true"
+                  ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"
+                /></svg>
+              </button>
+              <p class="form-note">Alle Felder sind Pflichtfelder. Deine Angaben werden zur Beantwortung deiner Anfrage per E-Mail an EquiCrew übermittelt – mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+            </div>
+          </form>
+          <div class="form-alert" role="alert" data-form-alert>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" data-icon="lucide/circle-alert" aria-hidden="true"
+              ><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                ><circle cx="12" cy="12" r="10"
+                /><path d="M12 8v4m0 4h.01"
+              /></g
+            ></svg>
+            <p data-alert-body><strong>Das Formular ist gerade nicht erreichbar.</strong>Schreib uns bitte direkt an <a href="mailto:office@equicrew.com">office@equicrew.com</a>.</p>
+          </div>
+          <div class="form-success" data-form-success role="status" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" data-icon="lucide/check" aria-hidden="true"
+              ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"
+            /></svg>
+            <h2>Danke für deine Nachricht!</h2>
+            <p>Wir melden uns so bald wie möglich bei dir.</p>
+            <a class="btn-secondary" href="index.html">Zur Startseite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon" data-icon="lucide/arrow-right" aria-hidden="true"
+                ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"
+              /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-od-id="site-footer">
+    <div class="wrap site-footer__grid">
+      <div>
+        <p class="site-footer__name">EquiCrew FlexCo</p>
+        <address>Marktplatz 14, 4310 Mauthausen</address>
+      </div>
+      <div>
+        <a href="mailto:office@equicrew.com">office@equicrew.com</a><br>
+        <a href="tel:+436504593129">+43 650 4593 129</a>
+      </div>
+      <div class="site-footer__end">
+        <nav class="site-footer__links" aria-label="Rechtliches">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+        <p>© EquiCrew FlexCo 2025</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
