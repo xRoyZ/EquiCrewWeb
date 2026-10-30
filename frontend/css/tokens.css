@@ -1,0 +1,88 @@
+/* EquiCrew design tokens, taken 1:1 from the approved mockup set (design/mockups/styles.css).
+   palette: night-blue ground with stepped deeper bands, one warm accent (heat) for the primary action.
+   type: Red Hat Display (display, 300/700) + Albert Sans (text, 400/700); scale 13/16/20/28/44/72/160 px.
+   spacing: 8 px base. Mobile values below 820 px. */
+
+:root {
+  /* colour */
+  --ground: oklch(0.21 0.03 250);
+  --ground-deep: oklch(0.17 0.03 250);
+  --ground-deeper: oklch(0.14 0.03 250);
+  --surface: oklch(0.27 0.03 250);
+  --surface-hover: oklch(0.32 0.03 250);
+  --light: oklch(0.95 0.008 240);
+  --ink: oklch(0.96 0.006 240);
+  --muted: oklch(0.70 0.02 245);
+  --mark: oklch(0.66 0.035 245);
+  --rule: oklch(0.38 0.03 250);
+  --accent: oklch(0.74 0.15 55);
+  --accent-hover: oklch(0.80 0.14 55);
+  --accent-press: oklch(0.68 0.15 55);
+  --accent-ink: oklch(0.52 0.14 55);
+  --ink-on-light: oklch(0.21 0.03 250);
+  --muted-on-light: oklch(0.42 0.03 250);
+  --rule-on-light: oklch(0.80 0.015 240);
+  --field-bg: oklch(0.99 0.004 240);
+  --field-border: oklch(0.55 0.03 245);
+  --error-on-light: oklch(0.48 0.17 25);
+  --error-on-dark: oklch(0.78 0.12 25);
+  --lede: oklch(0.85 0.015 245);
+
+  /* semantic colour that bands override */
+  --fg: var(--ink);
+  --fg-muted: var(--muted);
+  --line: var(--rule);
+  --ring: var(--accent);
+  --link-hover: var(--accent);
+
+  /* type */
+  --font-display: "Red Hat Display", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-text: "Albert Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --fs-1: 0.8125rem;
+  --fs-2: 1rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.75rem;
+  --fs-5: 2.75rem;
+  --fs-6: 4.5rem;
+  --fs-7: 10rem;
+  --fw-light: 300;
+  --fw-text: 400;
+  --fw-bold: 700;
+
+  /* spacing, 8 px base */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-5: 3rem;
+  --s-6: 4rem;
+  --s-7: 8rem;
+  --section-y: var(--s-7);
+  --gutter: 5rem;
+  --gap: 1.5rem;
+  --page-max: 90rem;
+
+  /* shape */
+  --r-s: 0.75rem;
+  --r-l: 1.5rem;
+  --r-xl: 4rem;
+  --r-pill: 999px;
+
+  /* depth and motion */
+  --shadow-float: 0 18px 48px oklch(0.08 0.03 250 / 0.55);
+  --t-fast: 160ms;
+  --t-med: 320ms;
+  --t-slow: 720ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (max-width: 820px) {
+  :root {
+    --section-y: 4.5rem;
+    --gutter: 1.25rem;
+    --fs-4: 1.5rem;
+    --fs-5: 2rem;
+    --fs-6: 2.5rem;
+    --fs-7: 6.5rem;
+  }
+}

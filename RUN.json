@@ -6,22 +6,118 @@
       "dir": "backend",
       "stack": "python",
       "kind": "server",
-      "install": [["${python}", "-m", "pip", "install", "-q", "-r", "requirements.txt"]],
-      "start": ["${python}", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${PORT}"],
+      "install": [
+        [
+          "${python}",
+          "-m",
+          "pip",
+          "install",
+          "-q",
+          "-r",
+          "requirements.txt"
+        ]
+      ],
+      "start": [
+        "${python}",
+        "-m",
+        "uvicorn",
+        "app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "${PORT}"
+      ],
       "port": 8000,
       "port_env": "PORT",
-      "health": {"path": "/api/health", "expect_status": [200]},
-      "test": [["${python}", "-m", "pytest", "-q"]],
-      "lint": [["${python}", "-m", "ruff", "format", "--check", "."], ["${python}", "-m", "ruff", "check", "."]],
+      "health": {
+        "path": "/api/health",
+        "expect_status": [
+          200
+        ]
+      },
+      "test": [
+        [
+          "${python}",
+          "-m",
+          "pytest",
+          "-q"
+        ]
+      ],
+      "lint": [
+        [
+          "${python}",
+          "-m",
+          "ruff",
+          "format",
+          "--check",
+          "."
+        ],
+        [
+          "${python}",
+          "-m",
+          "ruff",
+          "check",
+          "."
+        ]
+      ],
       "env": {
-        "SMTP_HOST": {"external": true, "degraded_without": "POST /api/contact answers 503 mail_unavailable; the form shows a mailto hint"},
-        "SMTP_PORT": {"external": true, "degraded_without": "the default SMTP port 587 is used"},
-        "SMTP_USER": {"external": true, "degraded_without": "mail is sent without SMTP authentication"},
-        "SMTP_PASSWORD": {"external": true, "degraded_without": "mail is sent without SMTP authentication"},
-        "SMTP_FROM": {"external": true, "degraded_without": "POST /api/contact answers 503 mail_unavailable; the form shows a mailto hint"},
-        "CONTACT_TO": {"dev": "office@equicrew.com"},
-        "CORS_ORIGIN": {"dev": "${service:web.origin}"}
+        "SMTP_HOST": {
+          "external": true,
+          "degraded_without": "POST /api/contact answers 503 mail_unavailable; the form shows a mailto hint"
+        },
+        "SMTP_PORT": {
+          "external": true,
+          "degraded_without": "the default SMTP port 587 is used"
+        },
+        "SMTP_USER": {
+          "external": true,
+          "degraded_without": "mail is sent without SMTP authentication"
+        },
+        "SMTP_PASSWORD": {
+          "external": true,
+          "degraded_without": "mail is sent without SMTP authentication"
+        },
+        "SMTP_FROM": {
+          "external": true,
+          "degraded_without": "POST /api/contact answers 503 mail_unavailable; the form shows a mailto hint"
+        },
+        "CONTACT_TO": {
+          "dev": "office@equicrew.com"
+        },
+        "CORS_ORIGIN": {
+          "dev": "${service:web.origin}"
+        }
       }
+    },
+    {
+      "name": "web",
+      "dir": "frontend",
+      "stack": "web-vite",
+      "kind": "server",
+      "start": [
+        "node",
+        "serve.mjs"
+      ],
+      "port": 8080,
+      "port_env": "PORT",
+      "health": {
+        "path": "/",
+        "expect_status": [
+          200
+        ]
+      },
+      "env": {
+        "API_BASE": {
+          "dev": "${service:api.origin}"
+        }
+      },
+      "test": [
+        [
+          "node",
+          "--test",
+          "tests/*.test.mjs"
+        ]
+      ]
     }
   ]
 }
