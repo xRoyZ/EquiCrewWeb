@@ -1,1 +1,67 @@
-/* Sections of the Start page (/). Filled by that page's ticket, built from css/tokens.css. */
+/* Sections of the Start page (/), built from css/tokens.css and the kit in components.css.
+   Rules follow design/mockups/styles.css (start: hero, crew teaser, cube teaser, call to action). */
+
+/* hero */
+.hero { padding-top: var(--s-4); padding-bottom: var(--s-6); background: var(--ground); }
+.hero__claim { color: var(--muted); }
+.hero__stage { margin-top: var(--s-6); }
+.mark {
+  grid-column: 1 / -1; grid-row: 1;
+  font-family: var(--font-display); font-weight: var(--fw-light);
+  font-size: min(19vw, 16.5rem); line-height: 1; letter-spacing: -0.03em;
+  color: var(--mark); white-space: nowrap;
+}
+.hero__cube { grid-column: 5 / 9; grid-row: 2; align-self: end; display: block; text-decoration: none; padding-bottom: var(--s-3); background: none; box-shadow: none; }
+.hero__cube:focus-visible { outline-offset: 6px; border-radius: var(--r-s); }
+.hero__mission { grid-column: 1 / 5; grid-row: 2; align-self: end; max-width: 24rem; padding-top: var(--s-5); color: var(--lede); font-size: 1.0625rem; line-height: 1.6; }
+@media (min-width: 768px) {
+  /* The design sets 27vw with an 8vw bleed to the right; sized from the stage width instead, so the
+     word ("equicrew" is about 3.58 em wide) fills that bleed without running past its own box. */
+  .mark {
+    margin-right: -8vw;
+    font-size: min(27vw, calc((min(100vw, var(--page-max)) - 2 * var(--gutter) + 8vw) / 3.62));
+  }
+}
+@media (max-width: 820px) {
+  .hero__stage { margin-top: var(--s-4); }
+  .hero__cube { grid-column: 1 / -1; grid-row: 2; width: min(78%, 20rem); justify-self: center; margin-top: calc(var(--s-4) * -1); }
+  .hero__mission { grid-column: 1 / -1; grid-row: 3; padding-top: var(--s-3); }
+}
+
+/* crew teaser */
+.crew-teaser { align-items: end; row-gap: var(--s-5); }
+.crew-teaser__text { grid-column: 1 / 9; }
+.crew-teaser__stamp { grid-column: 10 / 13; text-align: left; }
+.stamp__fig { font-size: var(--fs-7); }
+.crew-teaser h2 { margin-top: var(--s-4); max-width: 18ch; }
+.crew-teaser p.t-lead { margin-top: var(--s-3); max-width: 36ch; }
+.crew-teaser .btn-secondary { margin-top: var(--s-4); }
+@media (min-width: 768px) {
+  .crew-teaser h2 { max-width: 40rem; font-size: 3rem; }
+  .crew-teaser__stamp { justify-self: end; text-align: right; }
+}
+@media (max-width: 820px) {
+  .crew-teaser__text, .crew-teaser__stamp { grid-column: 1 / -1; }
+}
+
+/* cube teaser */
+.center { text-align: center; }
+.center .t-measure { margin-inline: auto; }
+.cube-teaser h2 { max-width: 16ch; margin-inline: auto; }
+.cube-teaser p.t-lead { margin-top: var(--s-3); color: var(--muted); max-width: 52ch; margin-inline: auto; }
+.parts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: var(--s-6); border-top: 1px solid var(--rule); text-align: left; }
+.parts li { padding: var(--s-3); border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: var(--s-1); min-width: 0; }
+.parts li:last-child { border-right: 0; }
+.parts__no { font-size: var(--fs-1); font-weight: var(--fw-bold); letter-spacing: 0.16em; color: var(--muted); }
+.parts__name { font-family: var(--font-display); font-size: var(--fs-3); font-weight: var(--fw-bold); hyphens: auto; overflow-wrap: break-word; }
+.cube-teaser .btn-secondary { margin-top: var(--s-4); }
+@media (max-width: 820px) {
+  .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .parts li { padding: var(--s-2); border-bottom: 1px solid var(--rule); }
+  .parts li:nth-child(2n) { border-right: 0; }
+}
+
+/* call to action */
+.cta h2 { font-size: var(--fs-5); }
+.cta p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs-3); }
+.cta .btn-primary { margin-top: var(--s-4); }
